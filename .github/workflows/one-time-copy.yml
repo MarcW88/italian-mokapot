@@ -1,5 +1,6 @@
 name: One-time exact source copy
 on:
+  workflow_dispatch:
   push:
     paths:
       - '.github/workflows/one-time-copy.yml'
