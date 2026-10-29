@@ -1,0 +1,357 @@
+{
+  "schema_version": 2,
+  "products": {
+    "bialetti-venus": {
+      "name": "Bialetti Venus 6 tasses",
+      "brand": "Bialetti",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/bialetti-venus/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "B07ZKZXM4B",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Construction",
+          "value": "Inox 18/10"
+        },
+        {
+          "label": "Tailles documentées",
+          "value": "2, 4, 6 tasses ; 10 tasses selon marché"
+        },
+        {
+          "label": "Induction",
+          "value": "Selon taille et détection de la plaque"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : choisir une moka inox avec taille et compatibilité induction vérifiées"
+    },
+    "bialetti-moka-express": {
+      "name": "Bialetti Moka Express 6 tasses",
+      "brand": "Bialetti",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/bialetti-moka-express/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "B00004RFRU",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Construction",
+          "value": "Aluminium"
+        },
+        {
+          "label": "Tailles documentées",
+          "value": "1, 2, 3, 4, 6, 9, 12, 18 tasses"
+        },
+        {
+          "label": "Induction directe",
+          "value": "Non"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : choisir la moka classique selon le volume habituel sur une plaque compatible"
+    },
+    "bialetti-moka-induction": {
+      "name": "Bialetti Moka Induction",
+      "brand": "Bialetti",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/bialetti-moka-induction/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Construction",
+          "value": "Base bi-layer acier/aluminium, partie supérieure aluminium"
+        },
+        {
+          "label": "Tailles actuelles documentées",
+          "value": "2, 4, 6 tasses"
+        },
+        {
+          "label": "Point de vigilance",
+          "value": "Variante, diamètre de détection et génération des pièces"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : passer à l’induction tout en restant proche de l’architecture Moka Express"
+    },
+    "bialetti-brikka": {
+      "name": "Bialetti Brikka",
+      "brand": "Bialetti",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/bialetti-brikka/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Classique",
+          "value": "2 et 4 tasses, aluminium, hors induction directe"
+        },
+        {
+          "label": "Induction vérifiée",
+          "value": "4 tasses, base bi-layer"
+        },
+        {
+          "label": "Point de vigilance",
+          "value": "Quantité d’eau mesurée et génération des pièces"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : choisir une Brikka pour sa valve et son café plus concentré en acceptant un protocole plus spécifique"
+    },
+    "bialetti-mini-express": {
+      "name": "Bialetti Mini Express",
+      "brand": "Bialetti",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/bialetti-mini-express/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Format vérifié",
+          "value": "2 tasses, ≈90 ml total"
+        },
+        {
+          "label": "Classique",
+          "value": "Aluminium, hors induction directe"
+        },
+        {
+          "label": "Induction vérifiée",
+          "value": "Base bi-layer inox/aluminium"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : servir directement deux petits cafés moka dans deux tasses"
+    },
+    "alessi-9090": {
+      "name": "Alessi 9090",
+      "brand": "Alessi",
+      "page_type": "PRODUCT",
+      "internal_url": "/modeles/alessi-9090/",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Construction",
+          "value": "Inox 18/10"
+        },
+        {
+          "label": "Tailles documentées",
+          "value": "1, 3, 6, 10 tasses"
+        },
+        {
+          "label": "Particularité",
+          "value": "Fermeture à levier et fond magnétique"
+        }
+      ],
+      "best_for": "Cas d’usage éditorial : évaluer si une conception premium et mécanique à levier justifie le choix"
+    },
+    "ariete-1358a": {
+      "name": "Ariete 1358A",
+      "brand": "Ariete",
+      "page_type": "PRODUCT",
+      "internal_url": "/comparatifs/cafetiere-italienne-electrique/#ariete-1358",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Capacité",
+          "value": "2 / 4 tasses avec réducteur"
+        },
+        {
+          "label": "Puissance",
+          "value": "400 W"
+        },
+        {
+          "label": "Fonctions",
+          "value": "Arrêt automatique · maintien au chaud 30 min"
+        }
+      ],
+      "best_for": "Un achat électrique actuel et simple à documenter pour 2 à 4 tasses"
+    },
+    "ariete-1368": {
+      "name": "Ariete 1368",
+      "brand": "Ariete",
+      "page_type": "PRODUCT",
+      "internal_url": "/comparatifs/cafetiere-italienne-electrique/#ariete-1368",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Capacité",
+          "value": "6 tasses · adaptateur 4"
+        },
+        {
+          "label": "Puissance",
+          "value": "480 W"
+        },
+        {
+          "label": "Point de vigilance",
+          "value": "Disponibilité à vérifier"
+        }
+      ],
+      "best_for": "Un besoin de plus grande capacité si le stock est confirmé"
+    },
+    "delonghi-alicia": {
+      "name": "De'Longhi Alicia",
+      "brand": "De'Longhi",
+      "page_type": "PRODUCT",
+      "internal_url": "/comparatifs/cafetiere-italienne-electrique/#alicia",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Références",
+          "value": "EMK6, EMK9 et variantes documentées"
+        },
+        {
+          "label": "Support",
+          "value": "Documentation fabricant encore disponible"
+        },
+        {
+          "label": "Point de vigilance",
+          "value": "Statut et stock à vérifier modèle par modèle"
+        }
+      ],
+      "best_for": "Un achat opportuniste lorsque la référence exacte et le stock sont clairement vérifiés"
+    },
+    "alessi-pulcina": {
+      "name": "Alessi Pulcina",
+      "brand": "Alessi",
+      "page_type": "PRODUCT",
+      "internal_url": "/comparatifs/cafetiere-italienne-design/#pulcina-cupola",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Designer",
+          "value": "Michele De Lucchi"
+        },
+        {
+          "label": "Tailles classiques",
+          "value": "1 / 3 / 6 tasses"
+        },
+        {
+          "label": "Positionnement",
+          "value": "Design sculptural"
+        }
+      ],
+      "best_for": "Une moka dont la forme et la présence visuelle font partie de la décision"
+    },
+    "alessi-la-cupola": {
+      "name": "Alessi La Cupola",
+      "brand": "Alessi",
+      "page_type": "PRODUCT",
+      "internal_url": "/comparatifs/cafetiere-italienne-design/#pulcina-cupola",
+      "image": {
+        "url": "",
+        "source_type": "UNSET",
+        "rights_checked": false,
+        "source_page": ""
+      },
+      "amazon": {
+        "asin": "",
+        "affiliate_url": "",
+        "marketplace": "amazon.fr"
+      },
+      "specs": [
+        {
+          "label": "Designer",
+          "value": "Aldo Rossi"
+        },
+        {
+          "label": "Positionnement",
+          "value": "Design architectural"
+        },
+        {
+          "label": "Variantes",
+          "value": "Classiques et induction selon collection"
+        }
+      ],
+      "best_for": "Une cuisine sobre ou géométrique où l'objet reste visible"
+    }
+  }
+}

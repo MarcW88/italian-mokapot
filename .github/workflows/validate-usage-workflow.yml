@@ -1,0 +1,22 @@
+name: Validate usage content workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Apply expected publication state
+        run: python apply_section_indexation.py usages
+
+      - name: Validate two-workflow usage architecture
+        run: python validate_usage_workflow.py

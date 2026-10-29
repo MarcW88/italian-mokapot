@@ -1,0 +1,60 @@
+name: Regenerate and quality-check Brand cluster
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regenerate-brand-cluster
+  cancel-in-progress: true
+
+jobs:
+  regenerate-brands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate site from current JS content modules
+        run: npm run build
+
+      - name: Validate all internal links
+        run: npm run check
+
+      - name: Validate Brand publication state and legacy blockers
+        run: python3 validate_brands.py
+
+      - name: Validate Brand JS-site quality blockers
+        run: python3 validate_brand_quality.py
+
+      - name: Commit regenerated Brand output
+        shell: bash
+        run: |
+          git config user.name "Marc Williame"
+          git config user.email "146358493+MarcW88@users.noreply.github.com"
+          git add marques/
+          if git diff --cached --quiet; then
+            echo "No generated Brand changes to commit"
+          else
+            git commit -m "content: regenerate brands from reviewed sources"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

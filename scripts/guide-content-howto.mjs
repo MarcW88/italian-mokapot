@@ -1,0 +1,156 @@
+export const guideHowToPages = {
+  'comment-utiliser-cafetiere-italienne': {
+    title: 'Comment utiliser une cafetière italienne ?',
+    description: 'Eau sous la soupape, café non tassé, fermeture, chauffe, retrait, service et nettoyage : la méthode fiable pour utiliser une moka sans transformer des astuces en règles universelles.',
+    canonical: '/guides/comment-utiliser-cafetiere-italienne/',
+    body: `
+<section class="page-hero guide-hero">
+  <div class="container">
+    <div class="breadcrumbs"><a href="/">Accueil</a> · <a href="/guides/">Guides</a> · Comment utiliser une cafetière italienne ?</div>
+    <span class="eyebrow">Mode d’emploi</span>
+    <h1>Comment utiliser une cafetière italienne ?</h1>
+    <p>Pour une moka classique : remplissez la base jusqu’au niveau prévu sans couvrir la soupape, ajoutez le café sans le tasser, nettoyez le bord du filtre, fermez correctement la cafetière, chauffez à feu doux à moyen puis retirez-la du feu dès que la préparation est terminée. Les détails de première utilisation, de plaque et d’entretien restent propres au modèle.</p>
+  </div>
+</section>
+
+<div class="container template-grid guide-layout">
+  <article class="guide-article content-main">
+    <section class="guide-answer">
+      <span class="eyebrow">La méthode en bref</span>
+      <h2>Les six gestes qui comptent vraiment</h2>
+      <ol class="decision-list">
+        <li><strong>Ajoutez l’eau</strong> sans dépasser le niveau prévu ; sur la Moka Express, Bialetti indique de rester juste sous la soupape de sécurité.</li>
+        <li><strong>Placez le filtre</strong> puis remplissez-le de café moulu sans compacter la mouture.</li>
+        <li><strong>Nettoyez le bord</strong> s’il reste du marc, puis fermez correctement la cafetière sans utiliser la poignée comme levier.</li>
+        <li><strong>Chauffez modérément.</strong> Bialetti recommande un feu doux à moyen ; sur gaz, la flamme ne doit pas remonter sur les côtés.</li>
+        <li><strong>Retirez du feu</strong> lorsque la préparation est terminée plutôt que de laisser la cafetière bouillir.</li>
+        <li><strong>Servez puis laissez refroidir</strong> avant démontage et nettoyage selon la notice du modèle.</li>
+      </ol>
+      <p>Cette séquence est cohérente avec les instructions publiées par Bialetti et Alessi. La notice de votre modèle reste prioritaire si elle donne une consigne différente.</p>
+    </section>
+
+    <section>
+      <h2>Avant de mettre le café : vérifiez trois choses</h2>
+      <p>Une moka est simple, mais elle n’est pas universelle. Avant la préparation, vérifiez que le joint et le filtre sont correctement en place, que la soupape n’est pas obstruée et que la cafetière est compatible avec votre plaque.</p>
+      <p>Sur induction en particulier, ne supposez pas qu’une cafetière fonctionnera parce qu’elle est métallique : la compatibilité dépend du modèle, du fond et parfois de sa taille. Si vous avez un doute, consultez le <a class="text-link" href="/guides/cafetiere-italienne-induction-compatibilite/">guide sur la compatibilité induction</a>.</p>
+      <div class="guide-callout"><strong>Première utilisation ?</strong> Ne suivez pas automatiquement la routine quotidienne. Bialetti demande par exemple de laver les pièces puis de jeter les trois premières préparations de la Moka Express. Voir le <a href="/guides/premiere-utilisation-cafetiere-italienne/">guide de première utilisation</a>.</div>
+    </section>
+
+    <section>
+      <h2>1. Mettez l’eau dans la base</h2>
+      <p>Sur la Moka Express, Bialetti demande de remplir la base d’eau jusque juste sous la soupape de sécurité. La marque explique que l’espace d’air laissé au-dessus de l’eau participe au fonctionnement ; un réservoir trop rempli peut conduire à un café bouilli, amer ou brûlé. Alessi décrit lui aussi une eau placée sous la soupape pour ses moka.</p>
+      <p>Ce niveau n’est donc pas un détail décoratif. Il laisse la zone de sécurité libre et correspond à la méthode prévue par le fabricant. Évitez de remplir « à l’œil » jusqu’en haut du réservoir.</p>
+      <p>La température initiale de l’eau est un bon exemple de distinction entre <strong>mode d’emploi</strong> et <strong>astuce de recette</strong> : Alessi indique de l’eau froide dans son rituel moka, tandis que les instructions Moka Express de Bialetti consultées ne font pas de l’eau préchauffée une étape obligatoire. Cette page ne transforme donc ni l’eau froide ni l’eau chaude en règle universelle.</p>
+    </section>
+
+    <section>
+      <h2>2. Remplissez le filtre de café sans le tasser</h2>
+      <p>Insérez l’entonnoir-filtre, puis ajoutez le café moulu. Bialetti précise de ne pas appuyer ni compacter le café. Alessi indique de remplir le filtre et de niveler doucement la mouture.</p>
+      <p>Bialetti NZ ajoute un geste pratique utile avant fermeture : retirez les grains ou résidus présents sur le bord de l’entonnoir. Un plan de joint propre évite d’introduire volontairement un obstacle entre les deux parties de la cafetière.</p>
+      <p>Il n’est donc pas nécessaire de transformer cette étape en tassage d’espresso. Pour la finesse, Bialetti recommande actuellement une mouture <strong>medium-fine</strong> pour la Moka Express, mais le réglage exact et le dosage méritent leurs propres pages.</p>
+      <p>Pour aller plus loin, consultez <a class="text-link" href="/guides/dosage-cafe-cafetiere-italienne/">le guide du dosage</a> et <a class="text-link" href="/guides/mouture-cafetiere-italienne/">le guide de la mouture</a>.</p>
+    </section>
+
+    <section>
+      <h2>3. Fermez la cafetière avant de chauffer</h2>
+      <p>Vissez ou verrouillez la partie supérieure selon le mécanisme de votre cafetière. Sur la Moka Express, Bialetti demande de visser fermement la partie supérieure sur la base.</p>
+      <p>La fermeture doit être correcte, mais la poignée n’est pas un levier. Bialetti avertit de ne pas utiliser la poignée pour dévisser la cafetière, car elle peut être endommagée ; son guide d’utilisation général rappelle également d’éviter de s’en servir comme point d’appui lors de l’assemblage ou du démontage.</p>
+      <p>Si vous observez ensuite une fuite de vapeur au niveau de la jonction, le problème ne se résume pas forcément à « serrer plus fort » : propreté du bord, joint, filtre ou montage peuvent être en cause. Voir le <a class="text-link" href="/guides/cafetiere-italienne-fuite-vapeur/">guide sur les fuites de vapeur</a>.</p>
+    </section>
+
+    <section>
+      <h2>4. Chauffez à feu doux à moyen</h2>
+      <p>Bialetti recommande une chauffe douce à moyenne pour la Moka Express. Sur une cuisinière à gaz, la flamme doit rester sous la base et ne pas remonter le long de la cafetière. Alessi donne également une consigne de chauffe moyenne à basse pour ses moka.</p>
+      <p>Le but n’est pas de faire bouillir la cafetière le plus vite possible. Une chauffe trop agressive n’est pas la méthode recommandée par ces fabricants et peut dégrader le résultat.</p>
+      <div class="guide-callout"><strong>Repère utile :</strong> utilisez une puissance qui chauffe la base de façon régulière sans faire lécher les parois par la flamme. Le réglage exact dépend de votre plaque et de votre cafetière ; il n’existe pas de chiffre universel valable pour tous les équipements.</div>
+    </section>
+
+    <section>
+      <h2>5. Retirez la moka du feu lorsque la préparation est terminée</h2>
+      <p>Pour la Moka Express, Bialetti indique de retirer la cafetière immédiatement du feu lorsque la partie supérieure est remplie et de ne pas laisser le café bouillir. C’est un repère plus fiable qu’un minutage fixe, car le temps dépend notamment de la taille de la cafetière et de l’intensité de chauffe.</p>
+      <p>Bialetti publie une plage indicative de 3 à 6 minutes pour sa Moka Express selon la taille et la puissance. Ce chiffre décrit cette gamme et ces conditions : il ne doit pas devenir une minuterie universelle pour toutes les moka.</p>
+      <p>De nombreux tutoriels conseillent d’attendre une couleur précise, un « glou-glou », de garder le couvercle ouvert ou de refroidir la base sous l’eau pour stopper l’extraction. Ces gestes peuvent appartenir à des recettes particulières, mais ils ne figurent pas comme étapes obligatoires dans les instructions fabricant Bialetti et Alessi vérifiées ici. Le repère de base reste donc la fin de préparation définie par le modèle.</p>
+      <p>Si votre café sort régulièrement très amer ou présente un goût brûlé, le problème mérite un diagnostic séparé : <a class="text-link" href="/guides/cafetiere-italienne-cafe-amer-brule/">pourquoi une cafetière italienne donne un café amer ou brûlé</a>.</p>
+    </section>
+
+    <section>
+      <h2>6. Mélangez si vous le souhaitez, servez, puis laissez refroidir</h2>
+      <p>Le guide d’utilisation Bialetti NZ conseille de remuer doucement le café dans la partie supérieure avant de le verser. C’est un <strong>conseil de service Bialetti</strong>, pas une condition de sécurité ni une règle que nous généralisons à toutes les marques.</p>
+      <p>Après le service, laissez la cafetière refroidir avant de la démonter. Pour la Moka Express, Bialetti recommande un lavage à la main dans de l’eau tiède après démontage.</p>
+      <p>Ne généralisez pas cette consigne à toutes les cafetières italiennes : matériau, finition et instructions peuvent varier. Pour l’entretien complet, suivez la notice de votre modèle et consultez notre <a class="text-link" href="/guides/nettoyer-cafetiere-italienne/">guide de nettoyage</a>.</p>
+    </section>
+
+    <section>
+      <h2>Ce qui est obligatoire, recommandé ou simplement optionnel</h2>
+      <div class="table-wrap"><table class="guide-table"><thead><tr><th>Geste</th><th>Statut dans ce guide</th><th>Pourquoi</th></tr></thead><tbody>
+        <tr><td>Rester sous la soupape</td><td>Instruction fabricant</td><td>Documenté pour Moka Express et cohérent avec le rituel Alessi.</td></tr>
+        <tr><td>Ne pas tasser</td><td>Instruction fabricant</td><td>Bialetti demande explicitement de ne pas compacter le café.</td></tr>
+        <tr><td>Feu doux à moyen</td><td>Instruction fabricant</td><td>Documenté par Bialetti ; Alessi indique également moyen à bas.</td></tr>
+        <tr><td>Eau préchauffée</td><td>Option de recette</td><td>Pas une obligation dans les instructions fabricants vérifiées.</td></tr>
+        <tr><td>Couvercle ouvert</td><td>Option de surveillance</td><td>Très répandu dans les tutoriels, mais pas une règle fabricant universelle.</td></tr>
+        <tr><td>Remuer avant de servir</td><td>Conseil Bialetti</td><td>Présent dans le guide d’utilisation Bialetti NZ ; pas nécessaire au fonctionnement.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section>
+      <h2>Les erreurs à éviter pendant l’utilisation</h2>
+      <ul class="guide-list">
+        <li><strong>Recouvrir ou dépasser la soupape avec l’eau</strong> alors que le fabricant demande de rester en dessous.</li>
+        <li><strong>Tasser le café</strong> comme dans un porte-filtre espresso alors que les instructions Bialetti demandent de ne pas le compacter.</li>
+        <li><strong>Laisser du marc sur le bord</strong> avant de refermer la cafetière.</li>
+        <li><strong>Utiliser la poignée comme levier</strong> pour serrer ou dévisser.</li>
+        <li><strong>Utiliser une flamme trop large</strong> qui remonte le long de la cafetière.</li>
+        <li><strong>Laisser la moka bouillir sur le feu</strong> après la fin de la préparation.</li>
+        <li><strong>Présenter une astuce de recette comme une obligation</strong> lorsque la notice du modèle ne la demande pas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Si le résultat n’est pas bon, changez une variable à la fois</h2>
+      <p>Une utilisation correcte ne garantit pas à elle seule que le café correspondra immédiatement à vos goûts. Le dosage, la mouture, le café utilisé et la chauffe peuvent encore modifier le résultat.</p>
+      <p>Pour éviter de tourner en rond, gardez la méthode de base stable puis ajustez une seule variable. Commencez par la <a class="text-link" href="/guides/mouture-cafetiere-italienne/">mouture</a> ou le <a class="text-link" href="/guides/dosage-cafe-cafetiere-italienne/">dosage</a>, plutôt que de changer simultanément l’eau, la quantité de café et la puissance.</p>
+    </section>
+
+    <section class="guide-next">
+      <span class="eyebrow">Prochaine étape</span>
+      <h2>Affinez maintenant la recette, pas le mode d’emploi</h2>
+      <p>Une fois la procédure maîtrisée, les deux variables les plus logiques à explorer sont la quantité de café et la mouture. Elles ont leurs propres guides pour éviter de transformer cette page en recette fourre-tout.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/guides/dosage-cafe-cafetiere-italienne/">Comprendre le dosage →</a>
+        <a class="btn btn-secondary" href="/guides/mouture-cafetiere-italienne/">Choisir la mouture</a>
+      </div>
+    </section>
+
+    <section class="guide-sources">
+      <h2 id="sources">Sources vérifiées</h2>
+      <p>La procédure générale ci-dessus s’appuie sur des instructions fabricants. Les notices du modèle exact priment si elles donnent une consigne différente.</p>
+      <ul>
+        <li><a href="https://bialetti-cookware.zendesk.com/hc/fr/articles/5416235346322-Comment-utiliser-la-Moka-Express">Bialetti — Comment utiliser la Moka Express ?</a></li>
+        <li><a href="https://www.bialetti.co.nz/products/moka-express">Bialetti NZ — Moka Express : usage, mouture et entretien</a></li>
+        <li><a href="https://www.bialetti.co.nz/blogs/making-great-coffee/using-bialetti-coffee-makers">Bialetti NZ — Using Bialetti Coffee Makers : bord propre, poignée et mélange avant service</a></li>
+        <li><a href="https://bialetti-cookware.zendesk.com/hc/fr/articles/5416180168210-Comment-utiliser-la-Moka-Express-pour-la-premi%C3%A8re-fois">Bialetti — Première utilisation de la Moka Express</a></li>
+        <li><a href="https://alessi.com/blogs/news/design-icons-for-your-coffee-ritual">Alessi — How to brew coffee with a moka</a></li>
+      </ul>
+      <p class="source-date">Dernière vérification des sources : 14 septembre 2026.</p>
+    </section>
+  </article>
+
+  <aside>
+    <div class="sidebar-card guide-sidebar">
+      <span class="eyebrow">Mémo</span>
+      <h3>Utiliser une moka</h3>
+      <ol>
+        <li>Eau sous la soupape</li>
+        <li>Café non tassé</li>
+        <li>Bord propre & fermeture</li>
+        <li>Chauffe modérée</li>
+        <li>Retrait dès la fin</li>
+        <li>Refroidissement avant nettoyage</li>
+      </ol>
+      <p>Les astuces de recette viennent après ces fondamentaux.</p>
+      <a class="sidebar-link" href="/guides/premiere-utilisation-cafetiere-italienne/">Première utilisation →</a>
+    </div>
+  </aside>
+</div>`
+  }
+};

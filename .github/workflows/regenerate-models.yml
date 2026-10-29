@@ -1,0 +1,62 @@
+name: Regenerate and quality-check Model cluster
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regenerate-model-cluster
+  cancel-in-progress: true
+
+jobs:
+  regenerate-models:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate site from current JS content modules
+        run: npm run build
+
+      - name: Validate all internal links
+        run: npm run check
+
+      - name: Validate Model publication state and rendered blockers
+        run: python3 validate_models.py
+
+      - name: Validate Model v2 workflow artifacts and freshness
+        run: python3 validate_model_workflow.py
+
+      - name: Commit regenerated Model output
+        shell: bash
+        run: |
+          git config user.name "Marc Williame"
+          git config user.email "146358493+MarcW88@users.noreply.github.com"
+          git add modeles/
+          if git diff --cached --quiet; then
+            echo "No generated Model changes to commit"
+          else
+            git commit -m "content: regenerate models from reviewed sources"
+            git reset --hard HEAD
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

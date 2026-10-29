@@ -1,0 +1,15 @@
+name: Validate trust content workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate-trust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate trust records and claims
+        run: python validate_trust_workflow.py

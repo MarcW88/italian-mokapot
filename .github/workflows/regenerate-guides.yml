@@ -1,0 +1,62 @@
+name: Regenerate and quality-check Guide cluster
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regenerate-guide-cluster
+  cancel-in-progress: false
+
+jobs:
+  regenerate-guides:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate site from current JS content modules
+        run: npm run build
+
+      - name: Enforce explicit Guide publication state
+        run: python3 apply_section_indexation.py guides
+
+      - name: Validate all internal links
+        run: npm run check
+
+      - name: Validate Guide machine blockers
+        run: python3 validate_guide_quality.py
+
+      - name: Commit regenerated Guide output
+        shell: bash
+        run: |
+          git config user.name "Marc Williame"
+          git config user.email "146358493+MarcW88@users.noreply.github.com"
+          git add guides/
+          if [ -f sitemap.xml ]; then git add sitemap.xml; fi
+          if [ -f robots.txt ]; then git add robots.txt; fi
+          if git diff --cached --quiet; then
+            echo "No generated Guide changes to commit"
+          else
+            git commit -m "content: regenerate guides from reviewed sources"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

@@ -1,0 +1,418 @@
+/* ============================================================
+   COMPARISON PAGES — editorial refinements
+   Loaded by assets/app.js on /comparatifs/ routes.
+   ============================================================ */
+
+html.comparison-page{
+  --color-primary:var(--moka);
+  --color-accent:var(--terra);
+  --color-text-muted:var(--muted);
+  --color-border:var(--line);
+  --color-white:var(--paper);
+  --color-bg-alt:var(--sand);
+  --font-sans:"DM Sans",sans-serif;
+  --font-serif:"DM Serif Display",serif;
+  --radius-sm:10px;
+  --header-h:78px;
+}
+
+/* Critical containment: wide comparison data scrolls inside the article,
+   never by widening the whole page. */
+html.comparison-page .comparison-layout,
+html.comparison-page .content-main{min-width:0;max-width:100%}
+html.comparison-page .table-wrapper{
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+  margin:22px 0 30px;
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-sm);
+  background:var(--color-white);
+  scrollbar-width:thin;
+  scrollbar-color:var(--color-border) transparent;
+}
+html.comparison-page .comp-table{
+  width:100%;
+  min-width:680px;
+  border-collapse:collapse;
+}
+html.comparison-page .comp-table th,
+html.comparison-page .comp-table td{
+  padding:14px 16px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-page .comp-table th{
+  background:var(--color-bg-alt);
+  font-size:.78rem;
+  line-height:1.35;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+}
+html.comparison-page .comp-table tr:last-child td{border-bottom:0}
+html.comparison-page .table-wrapper:first-of-type{border-top:3px solid var(--color-accent)}
+html.comparison-page .table-wrapper:first-of-type .comp-table td:first-child{font-weight:600}
+
+/* Hero and reading rhythm: more editorial, less landing-page-like. */
+html.comparison-page .page-hero{padding:48px 0 40px}
+html.comparison-page .page-hero h1{max-width:900px;letter-spacing:-.015em}
+html.comparison-page .page-hero p{max-width:780px}
+html.comparison-page .content-main p{margin:0 0 16px}
+html.comparison-page .content-main h2{margin:38px 0 14px}
+html.comparison-page .content-main h3{margin:26px 0 10px}
+html.comparison-page .content-main ul,
+html.comparison-page .content-main ol{padding-left:1.3rem}
+html.comparison-page .content-main a:not(.btn){
+  color:var(--color-primary);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-decoration-color:color-mix(in srgb,var(--color-primary) 42%,transparent);
+  text-underline-offset:3px;
+}
+html.comparison-page .content-main a:not(.btn):hover{text-decoration-color:currentColor}
+html.comparison-page .content-main .comp-table a:not(.btn){font-weight:700;text-decoration:none}
+
+/* Verdict: a reading anchor rather than another rounded card. */
+html.comparison-page .article-answer{
+  position:relative;
+  margin:0 0 32px;
+  padding:43px 22px 18px;
+  background:var(--color-white);
+  border-left:3px solid var(--color-accent);
+  border-radius:0 8px 8px 0;
+  line-height:1.72;
+}
+html.comparison-page .article-answer::before{
+  content:"Notre verdict";
+  position:absolute;
+  top:15px;
+  left:22px;
+  font-family:var(--font-sans);
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--color-primary);
+}
+
+/* Sidebar / TOC. */
+html.comparison-page .content-sidebar{min-width:0}
+html.comparison-page .sidebar-toc{
+  max-height:calc(100vh - var(--header-h) - 210px);
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--color-border) transparent;
+}
+html.comparison-page .sidebar-toc a.is-active{
+  color:var(--color-primary);
+  border-left-color:var(--color-accent);
+  font-weight:700;
+}
+
+/* ============================================================
+   COMPARISON HUB — decision-led entry point.
+   ============================================================ */
+html.comparison-hub-page .page-hero{padding-bottom:34px}
+html.comparison-hub-page .section{padding-top:42px}
+html.comparison-hub-page .comparison-hub{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 34px;
+  max-width:980px;
+}
+html.comparison-hub-page .comparison-hub__group{display:contents}
+html.comparison-hub-page .hub-link{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:16px;
+  align-items:baseline;
+  padding:20px 0;
+  color:var(--ink);
+  border-bottom:1px solid var(--color-border);
+  border-radius:0!important;
+  background:transparent;
+  box-shadow:none!important;
+}
+html.comparison-hub-page .hub-link:hover{color:var(--color-primary);border-bottom-color:var(--color-primary)}
+html.comparison-hub-page .hub-link strong{font-family:var(--font-serif);font-size:1.35rem;font-weight:400}
+html.comparison-hub-page .hub-link small{display:block;margin-top:4px;color:var(--color-text-muted);font-size:.78rem;line-height:1.4}
+html.comparison-hub-page .hub-link>span:last-child{color:var(--color-accent)}
+html.comparison-hub-page .hub-link--primary{
+  grid-column:1/-1;
+  min-height:128px;
+  padding:48px 0 26px;
+  border-top:3px solid var(--color-accent);
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-hub-page .hub-link--primary::before{
+  content:"Point de départ";
+  position:absolute;
+  top:18px;
+  left:0;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--color-primary);
+}
+html.comparison-hub-page .hub-link--primary strong{font-size:clamp(1.8rem,3vw,2.7rem)}
+html.comparison-hub-page .comparison-hub__label{
+  grid-column:1/-1;
+  margin:34px 0 2px;
+  padding-top:14px;
+  border-top:1px solid var(--color-border);
+  color:var(--color-text-muted);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+/* Comparison pages: verdict -> shortlist -> evidence. */
+html.comparison-page .comparison-layout{
+  grid-template-columns:minmax(0,790px) 250px;
+  justify-content:space-between;
+  gap:64px;
+}
+html.comparison-page .content-sidebar{
+  position:sticky;
+  top:110px;
+  align-self:start;
+  min-width:0;
+}
+html.comparison-page .sidebar-toc{
+  margin-bottom:26px;
+  padding:16px 0;
+  border-top:2px solid var(--color-accent);
+  border-bottom:1px solid var(--color-border);
+  background:var(--cream);
+}
+html.comparison-page .sidebar-toc h4{
+  margin:0 0 9px;
+  font-size:.7rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+html.comparison-page .sidebar-toc a{
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  gap:7px;
+  padding:7px 0;
+  border-left:2px solid transparent;
+  color:var(--color-text-muted);
+  font-size:.74rem;
+  line-height:1.32;
+}
+html.comparison-page .sidebar-toc a span{
+  font-family:var(--font-serif);
+  color:var(--color-accent);
+  font-size:.9rem;
+}
+html.comparison-page .content-sidebar>.sidebar-card{
+  position:static;
+  padding:18px 0;
+  background:transparent;
+  border:0;
+  border-top:2px solid var(--color-primary);
+  border-bottom:1px solid var(--color-border);
+  border-radius:0;
+}
+html.comparison-page .comparison-shortlist{
+  margin:0 0 34px;
+  padding:18px 0 4px;
+  border-top:2px solid var(--color-primary);
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-page .comparison-shortlist__rows{margin-top:10px}
+html.comparison-page .comparison-shortlist__row{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:12px;
+  padding:12px 0;
+  border-top:1px solid color-mix(in srgb,var(--color-border) 76%,transparent);
+}
+html.comparison-page .comparison-shortlist__index{
+  font-family:var(--font-serif);
+  color:var(--color-accent);
+  font-size:1rem;
+}
+html.comparison-page .comparison-shortlist__row strong{display:block;font-family:var(--font-serif);font-size:1.16rem;font-weight:400}
+html.comparison-page .comparison-shortlist__row span:not(.comparison-shortlist__index){display:block;margin-top:2px;color:var(--color-text-muted);font-size:.79rem}
+html.comparison-page .comparison-shortlist__row small{display:block;margin-top:4px;max-width:62ch;color:var(--ink);font-size:.8rem;line-height:1.45}
+html.comparison-general-page .comparison-shortlist{border-top-color:var(--color-accent)}
+html.comparison-specialized-page .article-answer{border-left-color:var(--color-primary)}
+
+/* Buyer cue: contextual checks, not another promotional card. */
+html.comparison-page .comparison-buyer-cue{
+  margin-top:26px;
+  padding:16px 0 14px;
+  border-top:2px solid var(--olive);
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-page .comparison-buyer-cue ul{
+  list-style:none;
+  margin:11px 0 0;
+  padding:0;
+}
+html.comparison-page .comparison-buyer-cue li{
+  position:relative;
+  padding:8px 0 8px 18px;
+  border-top:1px solid color-mix(in srgb,var(--color-border) 70%,transparent);
+  color:var(--color-text-muted);
+  font-size:.78rem;
+  line-height:1.4;
+}
+html.comparison-page .comparison-buyer-cue li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:var(--color-accent);
+}
+
+/* Reconsidered models: compact evidence trail instead of a wall of paragraphs. */
+html.comparison-page .comparison-reconsidered__heading{
+  margin-bottom:8px;
+}
+html.comparison-page .comparison-reconsidered__item{
+  position:relative;
+  display:block;
+  margin:0!important;
+  padding:14px 0 14px 46px;
+  border-top:1px solid var(--color-border);
+  max-width:72ch;
+}
+html.comparison-page .comparison-reconsidered__item:last-of-type{
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-page .comparison-reconsidered__index{
+  position:absolute;
+  left:0;
+  top:14px;
+  font-family:var(--font-serif);
+  color:var(--color-accent);
+  font-size:.95rem;
+}
+html.comparison-page .comparison-reconsidered__name{
+  font-family:var(--font-serif);
+  font-size:1.03rem;
+  font-weight:400;
+  color:var(--ink);
+}
+html.comparison-page .comparison-reconsidered__item .comparison-reconsidered__name{
+  display:inline;
+}
+
+/* Design comparison: show aesthetic intent without pretending to score taste. */
+html.comparison-page .comparison-design-map{
+  margin:0 0 34px;
+  padding:18px 0 4px;
+  border-top:2px solid var(--olive);
+  border-bottom:1px solid var(--color-border);
+}
+html.comparison-page .comparison-design-map__grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  margin-top:12px;
+}
+html.comparison-page .comparison-design-map__grid>div{
+  min-width:0;
+  padding:12px 14px;
+  border-left:1px solid var(--color-border);
+}
+html.comparison-page .comparison-design-map__grid>div:first-child{
+  border-left:0;
+  padding-left:0;
+}
+html.comparison-page .comparison-design-map__grid strong{
+  display:block;
+  font-family:var(--font-serif);
+  font-size:1rem;
+  font-weight:400;
+}
+html.comparison-page .comparison-design-map__grid span{
+  display:block;
+  margin-top:3px;
+  color:var(--color-text-muted);
+  font-size:.72rem;
+  line-height:1.3;
+}
+
+@media(max-width:1024px){
+  html.comparison-page .comparison-design-map__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  html.comparison-page .comparison-design-map__grid>div:nth-child(4){border-left:0}
+  html.comparison-page .comparison-design-map__grid>div:nth-child(n+4){border-top:1px solid var(--color-border)}
+  html.comparison-page .content-sidebar>.sidebar-card{display:none}
+
+  html.comparison-page .comparison-layout{grid-template-columns:minmax(0,1fr);gap:24px}
+  html.comparison-page .content-sidebar{position:static;order:-1}
+  html.comparison-page .content-sidebar>.sidebar-box:not(.sidebar-toc),
+  html.comparison-page .content-sidebar>.btn{display:none}
+  html.comparison-page .sidebar-toc{
+    max-height:none;
+    padding:16px 0;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:22px;
+    overflow:visible;
+  }
+  html.comparison-page .sidebar-toc h4{grid-column:1/-1}
+}
+
+@media(max-width:768px){
+  html.comparison-page{--header-h:66px}
+  html.comparison-page .page-hero{padding:38px 0 30px}
+  html.comparison-page .page-hero h1{font-size:clamp(2.35rem,11vw,2.7rem);line-height:1.03}
+  html.comparison-page .comparison-layout{padding:28px 0 48px}
+  html.comparison-page .article-answer{margin-bottom:26px;padding:41px 16px 15px 18px}
+  html.comparison-page .article-answer::before{left:18px;top:14px}
+  html.comparison-page .content-main h2{margin-top:32px}
+  html.comparison-page .sidebar-toc{grid-template-columns:1fr;max-height:230px}
+  html.comparison-page .sidebar-toc a.toc-level-3{display:none}
+
+  html.comparison-page .table-wrapper::before{
+    content:"Balayez horizontalement pour voir tout le tableau →";
+    display:block;
+    position:sticky;
+    left:0;
+    width:min(100%,360px);
+    padding:8px 12px;
+    background:var(--color-bg-alt);
+    border-bottom:1px solid var(--color-border);
+    font-size:.7rem;
+    font-weight:600;
+    color:var(--color-text-muted);
+  }
+  html.comparison-page .comp-table{min-width:680px}
+  html.comparison-page .comp-table th:first-child,
+  html.comparison-page .comp-table td:first-child{
+    position:sticky;
+    left:0;
+    z-index:1;
+    min-width:140px;
+    background:var(--color-white);
+    box-shadow:8px 0 12px -12px rgba(40,35,31,.35);
+  }
+  html.comparison-page .comp-table th:first-child{z-index:2;background:var(--color-bg-alt)}
+
+  html.comparison-hub-page .comparison-hub{grid-template-columns:1fr}
+  html.comparison-hub-page .hub-link--primary{grid-column:auto;min-height:110px;padding-top:44px}
+  html.comparison-hub-page .hub-link--primary strong{font-size:1.8rem}
+  html.comparison-page .comparison-shortlist__row{grid-template-columns:30px minmax(0,1fr);gap:9px}
+  html.comparison-page .comparison-shortlist__row small{display:none}
+  html.comparison-page .comparison-design-map__grid{grid-template-columns:1fr}
+  html.comparison-page .comparison-design-map__grid>div,
+  html.comparison-page .comparison-design-map__grid>div:first-child,
+  html.comparison-page .comparison-design-map__grid>div:nth-child(4){
+    padding:10px 0;
+    border-left:0;
+    border-top:1px solid var(--color-border);
+  }
+  html.comparison-page .comparison-design-map__grid>div:first-child{border-top:0}
+  html.comparison-page .comparison-reconsidered__item{padding-left:36px}
+  html.comparison-page .comparison-buyer-cue{margin-top:18px}
+}

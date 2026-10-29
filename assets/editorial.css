@@ -1,0 +1,949 @@
+/* ============================================================
+   CAFETIERE ITALIENNE — editorial visual layer
+   Purpose: preserve the existing information architecture while removing
+   generic landing-page patterns (card grids, pills, heavy rounding/shadows).
+   Loaded after assets/styles.css by assets/app.js.
+   ============================================================ */
+
+:root{
+  --radius:10px;
+  --shadow:0 10px 28px rgba(74,49,34,.07);
+}
+
+:focus-visible{
+  outline:3px solid color-mix(in srgb,var(--terra) 72%,white);
+  outline-offset:3px;
+}
+
+/* Header: solid editorial masthead rather than glass UI. */
+.site-header{
+  background:var(--cream);
+  backdrop-filter:none;
+  border-bottom:1px solid var(--line);
+}
+.header-row{height:72px}
+.search-btn,.menu-btn{
+  border-radius:6px;
+  background:transparent;
+}
+.quick-nav{background:transparent}
+.quick-row{justify-content:flex-start;padding-left:0;padding-right:0}
+
+/* Buttons: actions, not pills. */
+.btn{
+  border-radius:6px;
+  padding:13px 18px;
+  box-shadow:none;
+  transition:background-color .15s ease,border-color .15s ease,color .15s ease;
+}
+.btn-primary{box-shadow:none}
+.btn:hover{transform:none}
+
+/* Home hero: remove decorative startup/AI landing-page furniture. */
+.hero{padding:64px 0 60px}
+.hero-grid{
+  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+  gap:70px;
+  align-items:center;
+}
+.hero-copy{max-width:760px}
+.hero h1{font-size:clamp(3.1rem,6.2vw,6rem);max-width:820px}
+.hero-copy>p{max-width:620px;font-size:1.08rem}
+.sun,.hero-badge{display:none}
+.hero-visual{min-height:420px;border-left:1px solid var(--line)}
+.moka-illustration{
+  transform:none;
+  filter:none;
+  opacity:.9;
+}
+.steam{opacity:.22}
+
+/* Section rhythm: more like a specialist publication, less like stacked modules. */
+.section{padding:78px 0}
+.section-head{margin-bottom:30px}
+.section-head h2{max-width:760px}
+
+/* Three-entry chooser becomes an editorial index, not three equal cards. */
+.cards{
+  display:block;
+  border-top:1px solid var(--line);
+}
+.need-card,
+.need-card:nth-child(2){
+  min-height:0;
+  padding:22px 0;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+  color:var(--ink);
+  display:grid;
+  grid-template-columns:minmax(180px,.58fr) minmax(0,1fr) auto;
+  gap:28px;
+  align-items:center;
+  transition:none;
+}
+.need-card:nth-child(2) .muted{color:var(--muted)}
+.need-card:hover{
+  transform:none;
+  box-shadow:none;
+  color:var(--moka);
+}
+.card-icon{display:none}
+.need-card h3{margin:0;font-size:1.65rem}
+.card-link{margin:0;white-space:nowrap}
+
+/* Capacity section keeps its strong colour but loses the tile-dashboard look. */
+.sizes{background:var(--moka)}
+.size-grid{
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.22);
+  border-bottom:1px solid rgba(255,255,255,.22);
+}
+.size-card{
+  padding:25px 16px;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.18);
+  border-radius:0;
+  background:transparent;
+}
+.size-card:last-child{border-right:0}
+.size-card:hover{background:rgba(255,255,255,.06)}
+
+/* Finder remains an actual tool, therefore it can keep a contained surface. */
+.finder-wrap{
+  border:1px solid var(--line);
+  border-radius:8px;
+  box-shadow:none;
+}
+.finder-intro{background:var(--moka)}
+.option{
+  border-radius:5px;
+  background:transparent;
+}
+.result-card{border-radius:5px}
+
+/* Editorial stories: hierarchy by typography and rules instead of cards. */
+.feature-story,.story-list{
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  border-radius:0;
+}
+.feature-art{display:none}
+.feature-copy{padding:24px 0}
+.feature-copy h3{max-width:560px}
+.story-list{padding:0}
+.story{padding:21px 0}
+
+/* Trust statement becomes a colophon-like strip. */
+.trust{
+  gap:0;
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  overflow:visible;
+}
+.trust>div{
+  background:transparent;
+  padding:25px 28px;
+  border-right:1px solid var(--line);
+}
+.trust>div:first-child{padding-left:0}
+.trust>div:last-child{border-right:0;padding-right:0}
+
+/* Inner pages. */
+.page-hero{padding:58px 0 48px}
+.page-hero h1{font-size:clamp(2.7rem,5.6vw,5rem);letter-spacing:-.02em}
+.template-grid{gap:42px}
+.content-main{min-width:0}
+.sidebar-card{
+  border-radius:6px;
+  box-shadow:none;
+}
+.pill{
+  border-radius:3px;
+  margin:2px;
+}
+.directory{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 30px;
+  border-top:1px solid var(--line);
+}
+.directory a{
+  padding:17px 0;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.directory a:hover{border-bottom-color:var(--terra)}
+
+/* Guides: reduce nested rounded boxes while keeping useful decision structures. */
+.guide-answer{
+  background:var(--paper);
+  border:0!important;
+  border-left:3px solid var(--terra)!important;
+  border-radius:0 6px 6px 0;
+  padding:24px 24px!important;
+}
+.decision-list{border-top:1px solid var(--line)}
+.decision-list li{
+  padding:15px 10px 15px 44px;
+  background:transparent;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.decision-list li:before{
+  left:7px;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+}
+.guide-callout{border-radius:0 5px 5px 0}
+.guide-split{
+  gap:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.guide-split>div{
+  padding:22px 24px;
+  border:0;
+  border-right:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+}
+.guide-split>div:last-child{border-right:0}
+.table-wrap{border-radius:5px}
+.guide-next{border-radius:6px}
+
+/* Generic hubs/components found across generated editorial families. */
+.hub-link,
+.brand-choice,
+.pick{
+  border-radius:6px!important;
+  box-shadow:none!important;
+}
+
+/* ============================================================
+   BRAND PAGES — dossier / monograph rather than generic content card stack.
+   ============================================================ */
+html.brand-page .page-hero{
+  background:transparent;
+  border-bottom:1px solid var(--line);
+}
+html.brand-page .page-hero p{max-width:720px}
+.brand-layout{
+  grid-template-columns:minmax(0,1fr) 260px;
+  gap:64px;
+}
+.brand-layout .guide-answer{
+  background:transparent;
+  border:0!important;
+  border-top:3px solid var(--terra)!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0;
+  padding:24px 0 28px!important;
+}
+.brand-layout .guide-answer h2{max-width:650px}
+.brand-layout .sidebar-card{
+  position:sticky;
+  top:112px;
+  padding:18px 0 16px;
+  background:transparent;
+  color:var(--ink);
+  border:0;
+  border-top:2px solid var(--moka);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.brand-layout .sidebar-card p{color:var(--muted)}
+.brand-layout .sidebar-card .pill{
+  display:inline;
+  padding:0;
+  margin:0 12px 0 0;
+  background:transparent;
+  color:var(--moka);
+  border:0;
+  border-bottom:1px solid color-mix(in srgb,var(--moka) 30%,transparent);
+  border-radius:0;
+  line-height:1.8;
+}
+.brand-layout .comparison-picks{
+  display:block;
+  border-top:1px solid var(--line);
+}
+.brand-layout .pick{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr) auto;
+  gap:24px;
+  align-items:start;
+  padding:20px 0;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0!important;
+}
+.brand-layout .pick h3{margin:0;font-size:1.3rem}
+.brand-layout .pick p{margin:0;color:var(--muted)}
+.brand-layout .pick .text-link{white-space:nowrap}
+.brand-layout .table-wrap{
+  border-radius:0;
+  border-left:0;
+  border-right:0;
+}
+
+/* Brand hub: two brands read as editorial dossiers, not equal feature cards. */
+html.brand-hub-page .brand-directory{
+  display:block;
+  border-top:1px solid var(--line);
+}
+html.brand-hub-page .brand-choice{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr) auto;
+  grid-template-areas:
+    "label title action"
+    "label copy action";
+  gap:4px 28px;
+  align-items:start;
+  padding:26px 0;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0!important;
+}
+html.brand-hub-page .brand-choice .eyebrow{grid-area:label;padding-top:7px}
+html.brand-hub-page .brand-choice h2{grid-area:title;margin:0;font-size:2.2rem}
+html.brand-hub-page .brand-choice p{grid-area:copy;margin:5px 0 0;max-width:650px;color:var(--muted)}
+html.brand-hub-page .brand-choice .card-link{grid-area:action;align-self:center}
+html.brand-hub-page .brand-choice:hover h2{color:var(--moka)}
+html.brand-hub-page .brand-choice__path{
+  grid-column:2;
+  margin-top:7px;
+  color:var(--moka);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+}
+html.brand-hub-page .brand-choice--bialetti{border-top:2px solid var(--moka)}
+html.brand-hub-page .brand-choice--alessi{border-top:2px solid var(--olive)}
+html.brand-hub-page .brand-choice--giannini{border-top:2px solid var(--terra)}
+
+/* Brand pages: each dossier keeps the same editorial frame but exposes its own logic. */
+.brand-layout>aside.brand-sidebar{
+  position:sticky;
+  top:112px;
+  align-self:start;
+  min-width:0;
+}
+.brand-toc{
+  margin-bottom:26px;
+  padding:16px 0;
+  border-top:2px solid var(--terra);
+  border-bottom:1px solid var(--line);
+}
+.brand-toc ol{list-style:none;margin:11px 0 0;padding:0}
+.brand-toc li+li{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.brand-toc a{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:7px;
+  padding:7px 0;
+  color:var(--muted);
+  font-size:.74rem;
+  line-height:1.35;
+}
+.brand-toc a:hover{color:var(--moka)}
+.brand-toc a span{font-family:"DM Serif Display",serif;color:var(--terra);font-size:.9rem}
+.brand-sidebar>.sidebar-card{position:static}
+
+.brand-identity-map{
+  margin:0 0 34px;
+  padding:18px 0 4px;
+  border-top:2px solid var(--moka);
+  border-bottom:1px solid var(--line);
+}
+html.brand-alessi-page .brand-identity-map{border-top-color:var(--olive)}
+html.brand-giannini-page .brand-identity-map{border-top-color:var(--terra)}
+.brand-identity-map>div{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:11px;
+}
+html.brand-alessi-page .brand-identity-map>div{grid-template-columns:repeat(5,minmax(0,1fr))}
+.brand-identity-map p{
+  margin:0!important;
+  padding:12px 14px;
+  border-left:1px solid var(--line);
+}
+.brand-identity-map p:first-child{border-left:0;padding-left:0}
+.brand-identity-map strong{
+  display:block;
+  font-family:"DM Serif Display",serif;
+  font-size:1rem;
+  font-weight:400;
+}
+.brand-identity-map span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:.72rem;
+  line-height:1.35;
+}
+
+.brand-layout .brand-picks--next{
+  border-top:2px solid var(--moka);
+}
+.brand-layout .brand-picks--next .pick{
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  padding:15px 0;
+}
+.brand-layout .brand-picks--next .pick h3{
+  grid-column:1;
+  font-size:1.08rem;
+}
+.brand-layout .brand-picks--next .pick p{
+  grid-column:1;
+  font-size:.86rem;
+}
+.brand-layout .brand-picks--next .pick .text-link{
+  grid-column:2;
+  grid-row:1/span 2;
+  align-self:center;
+}
+
+html.brand-bialetti-page .guide-answer{border-top-color:var(--moka)!important}
+html.brand-alessi-page .guide-answer{border-top-color:var(--olive)!important}
+html.brand-giannini-page .guide-answer{border-top-color:var(--terra)!important}
+
+/* ============================================================
+   MODEL PAGES — technical editorial sheet, not a smaller brand page.
+   ============================================================ */
+html.model-page .page-hero{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+html.model-page .page-hero p{max-width:700px}
+.model-layout{
+  grid-template-columns:minmax(0,1fr) 250px;
+  gap:64px;
+}
+.model-layout .guide-answer{
+  margin-bottom:0;
+  background:transparent;
+  border:0!important;
+  border-top:2px solid var(--moka)!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0;
+  padding:22px 0 27px!important;
+}
+.model-layout .guide-answer h2{max-width:640px}
+.model-layout .content-main>section{
+  padding:38px 0;
+}
+.model-layout .sidebar-card{
+  position:sticky;
+  top:112px;
+  padding:18px 0 16px;
+  background:transparent;
+  color:var(--ink);
+  border:0;
+  border-top:2px solid var(--terra);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.model-layout .sidebar-card p{color:var(--muted)}
+.model-layout .sidebar-card .pill{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  padding:4px 0;
+  margin:0;
+  background:transparent;
+  color:var(--moka);
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.model-layout .table-wrap{
+  border-radius:0;
+  border-left:0;
+  border-right:0;
+}
+.model-layout .guide-table th{
+  background:transparent;
+  border-bottom:2px solid var(--moka);
+}
+.model-layout .guide-table td{background:transparent}
+
+/* Model hub: concise catalogue index, not a card directory. */
+html.model-hub-page .directory{
+  grid-template-columns:1fr;
+  max-width:860px;
+}
+html.model-hub-page .directory a{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  padding:22px 0;
+  font-family:"DM Serif Display",serif;
+  font-size:1.55rem;
+  font-weight:400;
+}
+html.model-hub-page .directory a span{
+  font-family:"DM Sans",sans-serif;
+  font-size:1rem;
+  color:var(--terra);
+}
+
+/* Model hub grouped by purchase logic. */
+html.model-hub-page .model-directory{max-width:900px}
+html.model-hub-page .model-directory__group{
+  padding:18px 0 8px;
+  border-top:1px solid var(--line);
+}
+html.model-hub-page .model-directory__group:first-child{border-top:2px solid var(--moka)}
+html.model-hub-page .model-directory__group>a{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  font-family:"DM Serif Display",serif;
+  font-size:1.5rem;
+  font-weight:400;
+}
+html.model-hub-page .model-directory__group>a:hover{color:var(--moka);border-bottom-color:var(--moka)}
+html.model-hub-page .model-directory__group>a span{
+  font-family:"DM Sans",sans-serif;
+  font-size:1rem;
+  color:var(--terra);
+}
+
+/* Model details: compact technical sheet + navigation. */
+.model-layout>aside.model-sidebar{
+  position:sticky;
+  top:112px;
+  align-self:start;
+  min-width:0;
+}
+.model-toc{
+  margin-bottom:26px;
+  padding:16px 0;
+  border-top:2px solid var(--terra);
+  border-bottom:1px solid var(--line);
+}
+.model-toc ol{list-style:none;margin:11px 0 0;padding:0}
+.model-toc li+li{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.model-toc a{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:7px;
+  padding:7px 0;
+  color:var(--muted);
+  font-size:.74rem;
+  line-height:1.35;
+}
+.model-toc a:hover{color:var(--moka)}
+.model-toc a span{font-family:"DM Serif Display",serif;color:var(--terra);font-size:.9rem}
+.model-sidebar>.sidebar-card{position:static}
+
+.model-spec-sheet{
+  margin:0 0 34px;
+  padding:18px 0 4px;
+  border-top:2px solid var(--moka);
+  border-bottom:1px solid var(--line);
+}
+.model-spec-sheet dl{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  margin:11px 0 0;
+}
+.model-spec-sheet dl>div{
+  min-width:0;
+  padding:11px 14px;
+  border-left:1px solid var(--line);
+}
+.model-spec-sheet dl>div:first-child{border-left:0;padding-left:0}
+.model-spec-sheet dt{
+  color:var(--muted);
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.model-spec-sheet dd{
+  margin:4px 0 0;
+  font-family:"DM Serif Display",serif;
+  font-size:1.02rem;
+  line-height:1.25;
+}
+
+.model-layout .model-alternatives{
+  border-top:2px solid var(--olive);
+}
+.model-layout .model-alternatives .pick{
+  grid-template-columns:190px minmax(0,1fr);
+}
+.model-layout .model-alternatives .pick .text-link{grid-column:2}
+html.model-detail-page .page-hero h1{max-width:900px}
+
+/* ============================================================
+   GUIDE PAGES — long-form reading. Boxes become margin notes and rules.
+   ============================================================ */
+html.guide-page .page-hero{
+  background:transparent;
+  border-bottom:1px solid var(--line);
+}
+html.guide-page .page-hero .container{max-width:1180px}
+html.guide-page .page-hero h1{max-width:820px}
+html.guide-page .page-hero p{max-width:760px;line-height:1.7}
+.guide-layout{
+  grid-template-columns:minmax(0,780px) 250px;
+  justify-content:space-between;
+  gap:70px;
+}
+.guide-article{font-size:1.01rem;line-height:1.72}
+.guide-article>section{padding:40px 0}
+.guide-article>section:first-child{padding-top:0}
+.guide-article p,
+.guide-article>section>ul,
+.guide-article>section>ol{max-width:72ch}
+.guide-layout .guide-answer{
+  background:transparent;
+  border:0!important;
+  border-top:3px solid var(--terra)!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0;
+  padding:24px 0 30px!important;
+}
+.guide-layout .guide-answer h2{max-width:650px}
+.guide-layout .decision-list{
+  margin-top:22px;
+  border-top:1px solid var(--line);
+}
+.guide-layout .decision-list li{
+  padding:14px 0 14px 42px;
+}
+.guide-layout .decision-list li:before{
+  left:0;
+  top:11px;
+  width:auto;
+  height:auto;
+  background:transparent;
+  color:var(--terra);
+  border-radius:0;
+  font-family:"DM Serif Display",serif;
+  font-size:1.2rem;
+  font-weight:400;
+}
+.guide-layout .guide-callout{
+  max-width:70ch;
+  margin:26px 0;
+  padding:8px 0 8px 18px;
+  background:transparent;
+  border-left:2px solid var(--olive);
+  border-radius:0;
+  color:color-mix(in srgb,var(--ink) 90%,var(--muted));
+}
+.guide-layout .sidebar-card.guide-sidebar{
+  position:sticky;
+  top:112px;
+  padding:18px 0 16px;
+  background:transparent;
+  color:var(--ink);
+  border:0;
+  border-top:2px solid var(--moka);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+}
+.guide-layout .guide-sidebar p{color:var(--muted)}
+.guide-layout .guide-sidebar ol{margin:16px 0 18px;padding-left:1.15rem;color:var(--muted)}
+.guide-layout .guide-sidebar .sidebar-link{color:var(--moka)}
+.guide-layout .guide-next{
+  margin-top:38px;
+  padding:30px 0!important;
+  background:transparent;
+  color:var(--ink);
+  border:0!important;
+  border-top:3px solid var(--moka)!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0;
+}
+.guide-layout .guide-next p{color:var(--muted)}
+.guide-layout .guide-next .btn-secondary{color:var(--ink);border-color:var(--line)}
+.guide-layout .guide-sources{
+  margin-top:8px;
+  padding-top:28px;
+  font-size:.88rem;
+}
+
+/* Guide hub reads like an editorial index. */
+html.guide-hub-page .directory{
+  counter-reset:guide-index;
+}
+html.guide-hub-page .directory a{
+  counter-increment:guide-index;
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr) auto;
+  gap:14px;
+  align-items:baseline;
+  font-weight:500;
+}
+html.guide-hub-page .directory a::before{
+  content:counter(guide-index,decimal-leading-zero);
+  font-family:"DM Serif Display",serif;
+  color:var(--terra);
+  font-weight:400;
+}
+html.guide-hub-page .directory a span{color:var(--terra)}
+
+/* Guide hub: compact learning paths make the three editorial intents scannable. */
+.guide-hub-group+.guide-hub-group{border-top:1px solid color-mix(in srgb,var(--line) 72%,transparent)}
+.guide-path{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:max-content;
+  max-width:100%;
+  margin:-4px 0 28px;
+  padding:10px 0;
+  border-top:2px solid var(--moka);
+  border-bottom:1px solid var(--line);
+  color:var(--moka);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.guide-path i{color:var(--terra);font-style:normal;font-weight:400}
+.guide-hub-group--prepare .guide-path{border-top-color:var(--olive)}
+.guide-hub-group--care .guide-path{border-top-color:var(--terra)}
+
+/* Guide reading tools: a real table of contents on long-form pages. */
+.guide-layout>aside{position:sticky;top:112px;align-self:start;min-width:0}
+.sidebar-toc{
+  position:static;
+  margin-bottom:30px;
+  padding:18px 0 16px;
+  border-top:2px solid var(--terra);
+  border-bottom:1px solid var(--line);
+  background:var(--cream);
+}
+.sidebar-toc+ .sidebar-card.guide-sidebar{position:static}
+.sidebar-toc ol{list-style:none;margin:12px 0 0;padding:0}
+.sidebar-toc li+li{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.sidebar-toc a{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:8px;
+  padding:8px 0;
+  color:var(--muted);
+  font-size:.76rem;
+  line-height:1.35;
+}
+.sidebar-toc a:hover{color:var(--moka)}
+.sidebar-toc a span{font-family:"DM Serif Display",serif;color:var(--terra);font-size:.9rem}
+.guide-mobile-toc{display:none}
+
+/* The same editorial system, but a different visual grammar for each guide intent. */
+html.guide-type-decision .guide-layout .guide-answer{border-top-color:var(--terra)!important}
+html.guide-type-procedure .guide-layout .guide-answer{border-top-color:var(--olive)!important}
+html.guide-type-tuning .guide-layout .guide-answer{border-top-color:var(--moka)!important}
+html.guide-type-diagnostic .guide-layout .guide-answer{border-top-color:var(--terra)!important}
+
+html.guide-type-procedure .guide-layout .decision-list li{
+  padding-left:48px;
+  border-bottom:0;
+  position:relative;
+}
+html.guide-type-procedure .guide-layout .decision-list li:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  top:36px;
+  bottom:-4px;
+  width:1px;
+  background:var(--line);
+}
+html.guide-type-procedure .guide-layout .decision-list li::before{
+  width:25px;
+  height:25px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--olive);
+  color:var(--olive);
+  font-family:"DM Sans",sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+}
+html.guide-type-diagnostic .guide-layout .guide-callout{
+  border-left-color:var(--terra);
+}
+html.guide-type-diagnostic .guide-layout .decision-list li::before{color:var(--moka)}
+html.guide-type-tuning .guide-layout .guide-split{border-top:2px solid var(--moka)}
+html.guide-type-tuning .guide-layout .guide-callout{border-left-color:var(--terra)}
+
+.site-footer{margin-top:30px}
+
+@media(max-width:900px){
+  .model-layout>aside.model-sidebar{position:static}
+  .model-toc{margin-bottom:0}
+  .model-spec-sheet dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .model-spec-sheet dl>div:nth-child(odd){border-left:0;padding-left:0}
+  .model-spec-sheet dl>div:nth-child(n+3){border-top:1px solid var(--line)}
+
+  .brand-layout>aside.brand-sidebar{position:static}
+  .brand-toc{margin-bottom:0}
+  .brand-identity-map>div,
+  html.brand-alessi-page .brand-identity-map>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand-identity-map p:nth-child(odd){border-left:0;padding-left:0}
+  .brand-identity-map p:nth-child(n+3){border-top:1px solid var(--line)}
+
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-visual{min-height:330px;border-left:0;border-top:1px solid var(--line)}
+  .need-card,.need-card:nth-child(2){grid-template-columns:minmax(150px,.55fr) minmax(0,1fr) auto;gap:18px}
+  .template-grid{gap:26px}
+  .brand-layout,.model-layout,.guide-layout{grid-template-columns:1fr;gap:34px}
+  .brand-layout .sidebar-card,
+  .model-layout .sidebar-card,
+  .guide-layout .sidebar-card.guide-sidebar{position:static}
+  .guide-layout>aside{position:static}
+  .sidebar-toc{display:none}
+  .guide-mobile-toc{
+    display:block;
+    grid-column:1/-1;
+    margin:0 0 4px;
+    padding:16px 0 18px;
+    border-top:2px solid var(--terra);
+    border-bottom:1px solid var(--line);
+  }
+  .guide-mobile-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;list-style:none;margin:10px 0 0;padding:0}
+  .guide-mobile-toc li{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+  .guide-mobile-toc a{display:grid;grid-template-columns:28px minmax(0,1fr);gap:7px;padding:8px 0;color:var(--muted);font-size:.76rem;line-height:1.3}
+  .guide-mobile-toc a span{font-family:"DM Serif Display",serif;color:var(--terra)}
+  .brand-layout .pick{grid-template-columns:150px minmax(0,1fr) auto;gap:18px}
+}
+
+@media(max-width:600px){
+  .header-row{height:66px}
+  .hero{padding:42px 0 44px}
+  .hero h1{font-size:clamp(2.75rem,14vw,4.2rem)}
+  .hero-visual{display:none}
+  .section{padding:58px 0}
+  .need-card,.need-card:nth-child(2){
+    grid-template-columns:1fr;
+    gap:7px;
+    padding:20px 0;
+  }
+  .need-card h3{font-size:1.5rem}
+  .card-link{margin-top:4px}
+  .size-grid{grid-template-columns:1fr 1fr}
+  .size-card:nth-child(2n){border-right:0}
+  .size-card:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
+  .trust{grid-template-columns:1fr}
+  .trust>div,
+  .trust>div:first-child,
+  .trust>div:last-child{
+    padding:20px 0;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .trust>div:last-child{border-bottom:0}
+  .directory{grid-template-columns:1fr}
+  .guide-split{grid-template-columns:1fr}
+  .guide-split>div{border-right:0;border-bottom:1px solid var(--line);padding:20px 0}
+  .guide-split>div:last-child{border-bottom:0}
+
+  html.brand-hub-page .brand-choice{
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+      "label action"
+      "title action"
+      "copy copy";
+    gap:5px 16px;
+    padding:22px 0;
+  }
+  html.brand-hub-page .brand-choice h2{font-size:1.85rem}
+  html.brand-hub-page .brand-choice .card-link{font-size:.85rem}
+  html.brand-hub-page .brand-choice__path{grid-column:1/-1;margin-top:4px;font-size:.66rem}
+  .brand-toc a{font-size:.72rem}
+  .brand-identity-map>div,
+  html.brand-alessi-page .brand-identity-map>div{grid-template-columns:1fr}
+  .brand-identity-map p,
+  .brand-identity-map p:first-child,
+  .brand-identity-map p:nth-child(odd){padding:10px 0;border-left:0;border-top:1px solid var(--line)}
+  .brand-identity-map p:first-child{border-top:0}
+  .brand-layout .brand-picks--next .pick{grid-template-columns:1fr}
+  .brand-layout .brand-picks--next .pick h3,
+  .brand-layout .brand-picks--next .pick p,
+  .brand-layout .brand-picks--next .pick .text-link{grid-column:1;grid-row:auto}
+  .brand-layout .brand-picks--next .pick .text-link{margin-top:3px}
+  .brand-table--stackable{min-width:0}
+  .brand-table--stackable thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .brand-table--stackable,.brand-table--stackable tbody,.brand-table--stackable tr,.brand-table--stackable td{display:block;width:100%}
+  .brand-table--stackable tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  .brand-table--stackable tr:last-child{border-bottom:0}
+  .brand-table--stackable td{display:grid;grid-template-columns:minmax(95px,.38fr) minmax(0,1fr);gap:12px;padding:6px 10px;border:0}
+  .brand-table--stackable td::before{content:attr(data-label);color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  html.model-detail-page .page-hero h1{font-size:clamp(2.35rem,11vw,2.7rem);line-height:1.03}
+  html.model-hub-page .model-directory__group>a{font-size:1.3rem}
+  .model-spec-sheet dl{grid-template-columns:1fr}
+  .model-spec-sheet dl>div,
+  .model-spec-sheet dl>div:nth-child(odd){padding:9px 0;border-left:0;border-top:1px solid var(--line)}
+  .model-spec-sheet dl>div:first-child{border-top:0}
+  .model-layout .model-alternatives .pick{grid-template-columns:1fr}
+  .model-layout .model-alternatives .pick .text-link{grid-column:1}
+  .model-table--stackable{min-width:0}
+  .model-table--stackable thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .model-table--stackable,.model-table--stackable tbody,.model-table--stackable tr,.model-table--stackable td{display:block;width:100%}
+  .model-table--stackable tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  .model-table--stackable tr:last-child{border-bottom:0}
+  .model-table--stackable td{display:grid;grid-template-columns:minmax(95px,.38fr) minmax(0,1fr);gap:12px;padding:6px 10px;border:0}
+  .model-table--stackable td::before{content:attr(data-label);color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .brand-layout .pick{
+    grid-template-columns:1fr;
+    gap:7px;
+    padding:18px 0;
+  }
+  .brand-layout .pick .text-link{white-space:normal}
+  .brand-layout .sidebar-card,
+  .model-layout .sidebar-card,
+  .guide-layout .sidebar-card.guide-sidebar{margin-top:0}
+  .guide-article{font-size:1rem}
+  .guide-article>section{padding:34px 0}
+  .guide-layout .guide-answer{padding:20px 0 25px!important}
+  html.guide-page .page-hero h1{font-size:clamp(2.35rem,11vw,2.65rem);line-height:1.02}
+  html.guide-hub-page .directory a{grid-template-columns:30px minmax(0,1fr) auto;gap:10px}
+  .guide-path{gap:7px;margin-top:0;font-size:.68rem;letter-spacing:.02em;white-space:nowrap;overflow-x:auto}
+  .sidebar-toc{display:none}
+  .guide-mobile-toc{
+    display:block;
+    grid-column:1/-1;
+    margin:0 0 4px;
+    padding:16px 0 18px;
+    border-top:2px solid var(--terra);
+    border-bottom:1px solid var(--line);
+  }
+  .guide-mobile-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;list-style:none;margin:10px 0 0;padding:0}
+  .guide-mobile-toc li{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+  .guide-mobile-toc a{display:grid;grid-template-columns:26px minmax(0,1fr);gap:6px;padding:8px 0;color:var(--muted);font-size:.74rem;line-height:1.3}
+  .guide-mobile-toc a span{font-family:"DM Serif Display",serif;color:var(--terra)}
+  .guide-table--stackable{min-width:0}
+  .guide-table--stackable thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .guide-table--stackable,.guide-table--stackable tbody,.guide-table--stackable tr,.guide-table--stackable td{display:block;width:100%}
+  .guide-table--stackable tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  .guide-table--stackable tr:last-child{border-bottom:0}
+  .guide-table--stackable td{display:grid;grid-template-columns:minmax(92px,.38fr) minmax(0,1fr);gap:12px;padding:6px 14px;border:0}
+  .guide-table--stackable td::before{content:attr(data-label);color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}

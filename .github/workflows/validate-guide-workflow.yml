@@ -1,0 +1,56 @@
+name: Validate Guide workflow
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-guides:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout regenerated main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild from Guide source of truth
+        run: npm run build
+
+      - name: Enforce explicit Guide publication state
+        run: python3 apply_section_indexation.py guides
+
+      - name: Validate repository links
+        run: npm run check
+
+      - name: Validate machine-detectable Guide blockers
+        run: python3 validate_guide_quality.py
+
+      - name: Verify generated Guide HTML is reproducible
+        shell: bash
+        run: |
+          if ! git diff --quiet -- guides/; then
+            echo 'Generated Guide HTML differs from committed output.'
+            git diff -- guides/
+            exit 1
+          fi
+          echo 'PASS: committed Guide HTML matches current source modules.'
